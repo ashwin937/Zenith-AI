@@ -1,0 +1,13 @@
+# Modelfile for optimized Mistral with sliding window attention
+
+FROM mistral
+
+# Optimize parameters for speed while maintaining accuracy
+PARAMETER temperature 0.3
+PARAMETER top_k 40
+PARAMETER top_p 0.9
+PARAMETER num_ctx 2048
+PARAMETER repeat_penalty 1.0
+
+# System prompt for accuracy
+SYSTEM """You are a highly accurate AI assistant. For ANY mathematical calculation, use the calculate tool. Show your work step-by-step. Always verify your answers."""
